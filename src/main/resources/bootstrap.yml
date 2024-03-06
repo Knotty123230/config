@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: vault, git, native
+  cloud:
+    config:
+      server:
+        vault:
+          token: hvs.pwqbgeqAyhs2fGrJmZlWJ5b7
+          kv-version: 2
+          default-key:
+          backend: default
+        native:
+          search-locations: classpath:/config
+        git:
+          uri: https://github.com/Knotty123230/config
+          search-paths: licensingservice
+          default-label: master
+
+server:
+  port: 8071
+encrypt:
+  key: secretKey
